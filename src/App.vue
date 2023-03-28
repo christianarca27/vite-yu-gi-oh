@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { store } from './store';
 import AppMain from './components/AppMain.vue'
+import AppLoader from './components/AppLoader.vue'
 
 export default {
   data() {
@@ -12,6 +13,7 @@ export default {
 
   components: {
     AppMain,
+    AppLoader,
   },
 
   created() {
@@ -23,7 +25,9 @@ export default {
 </script>
 
 <template>
-  <AppMain v-if="store.cards.length >= 50"></AppMain>
+  <AppLoader v-if="store.cards.length < 50"></AppLoader>
+
+  <AppMain v-else></AppMain>
 </template>
 
 <style lang="scss" scoped></style>
