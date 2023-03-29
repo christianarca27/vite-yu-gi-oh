@@ -16,8 +16,8 @@ export default {
             <img src="/img/millennium-puzzle.png" alt="">
         </div>
 
-        <div v-if="store.cards.length > 0" id="loading-bar">
-            <div v-for="len in store.cards.length" class="completed-percentual-bar"></div>
+        <div id="loading-bar">
+            <div v-if="store.cards.length > 0" v-for="len in store.cards.length" class="completed-percentual-bar"></div>
         </div>
     </div>
 </template>

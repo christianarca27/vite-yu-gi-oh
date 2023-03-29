@@ -24,6 +24,7 @@ export default {
 
 <style lang="scss">
 main {
+    background-image: url("/img/background.jpg");
     height: 100vh;
 
     display: flex;
