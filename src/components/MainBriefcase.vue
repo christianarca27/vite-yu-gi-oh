@@ -20,6 +20,8 @@ export default {
     <div id="briefcase">
         <BriefcaseTop></BriefcaseTop>
 
+        <hr>
+
         <BriefcaseBottom></BriefcaseBottom>
     </div>
 </template>
@@ -27,6 +29,7 @@ export default {
 <style lang="scss">
 #briefcase {
     height: 100%;
+    border: 5px solid black;
 
     display: flex;
     flex-flow: column nowrap;
