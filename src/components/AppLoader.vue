@@ -15,6 +15,8 @@ export default {
         <div id="logo-loader">
             <img src="/img/millennium-puzzle.png" alt="">
         </div>
+
+        <p>Download card in progress...</p>
     </div>
 </template>
 

@@ -17,15 +17,23 @@ export default {
   },
 
   created() {
-    axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=50&offset=0").then((res) => {
-      this.store.cards = res.data.data;
-    });
+    this.store.isResultValid = true;
+    axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?")
+      .catch((error) => {
+        this.store.isResultValid = false;
+      })
+      .then((res) => {
+        if (this.store.isResultValid) {
+          this.store.cards = res.data.data;
+          this.store.isLoading = false;
+        }
+      });
   },
 }
 </script>
 
 <template>
-  <AppLoader v-if="store.cards.length == 0"></AppLoader>
+  <AppLoader v-if="store.isLoading"></AppLoader>
 
   <AppMain v-else></AppMain>
 </template>
