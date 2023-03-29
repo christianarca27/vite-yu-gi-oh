@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-    <div v-if="store.cards.length >= 50" class="container">
+    <div v-if="store.cards.length > 0" class="container">
         <CardItem v-for="(card, index) in store.cards" :card="card" :index="index" class="card"></CardItem>
     </div>
 </template>
