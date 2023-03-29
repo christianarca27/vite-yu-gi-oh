@@ -22,7 +22,7 @@ export default {
     </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 main {
     background-image: url("/img/background.jpg");
     background-position: center;

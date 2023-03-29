@@ -26,7 +26,7 @@ export default {
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #briefcase {
     height: 100%;
     border: 5px solid black;

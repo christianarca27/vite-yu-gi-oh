@@ -38,7 +38,7 @@ export default {
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #briefcase-top {
     background-color: #803b41;
     height: 50%;
