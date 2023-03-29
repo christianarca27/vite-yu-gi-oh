@@ -15,10 +15,6 @@ export default {
         <div id="logo-loader">
             <img src="/img/millennium-puzzle.png" alt="">
         </div>
-
-        <div id="loading-bar">
-            <div v-if="store.cards.length > 0" v-for="len in store.cards.length" class="completed-percentual-bar"></div>
-        </div>
     </div>
 </template>
 
@@ -39,24 +35,6 @@ export default {
         img {
             width: 100%;
             height: auto;
-        }
-    }
-
-    #loading-bar {
-        width: 100%;
-        height: 50px;
-        border: 5px solid black;
-        border-radius: 25px;
-
-        display: flex;
-        flex-flow: row nowrap;
-
-        overflow: hidden;
-
-        .completed-percentual-bar {
-            background-color: #dfa937;
-            width: 2%;
-            height: 100%;
         }
     }
 }
