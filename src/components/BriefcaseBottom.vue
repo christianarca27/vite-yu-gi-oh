@@ -39,10 +39,16 @@ export default {
 </script>
 
 <template>
-    <div v-if="store.isResultValid" class="container">
-        <CardItem v-for="(card, index) in store.cards.slice(store.startIndex, store.stopIndex)" :card="card"
-            :index="index + (store.actualPage * store.cardPerPage)" class="card">
+    <div class="container">
+        <CardItem v-if="store.isResultValid" v-for="(card, index) in store.cards.slice(store.startIndex, store.stopIndex)"
+            :card="card" :index="index + (store.actualPage * store.cardPerPage)" class="card">
         </CardItem>
+
+        <div v-else id="no-result">
+            <p>Nessun risultato trovato...</p>
+
+            <img src="/img/nonno-yugi.png" alt="">
+        </div>
 
         <div v-show="store.actualPage > 0" @click="prevPage()" id="prev-page">
             <i class="fa-solid fa-circle-chevron-up"></i>
@@ -57,10 +63,6 @@ export default {
             {{ store.actualPage + 1 }} / {{ parseInt(store.cards.length / 50) + 1 }}
         </div>
     </div>
-
-    <div v-else class="container">
-        Nessun risultato trovato...
-    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -74,6 +76,25 @@ export default {
     align-content: start;
 
     position: relative;
+
+    #no-result {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-flow: column nowrap;
+
+        p {
+            height: 10%;
+            padding: .5rem;
+        }
+
+        img {
+            height: 90%;
+            width: auto;
+            align-self: center;
+        }
+    }
 
     #prev-page {
         position: absolute;
