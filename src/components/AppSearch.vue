@@ -17,28 +17,32 @@ export default {
             this.store.startIndex = 0;
             this.store.stopIndex = 50;
 
+            this.store.isLoading = true;
             this.store.isResultValid = true;
             if (this.inputSearch == "") {
                 axios.get(this.store.basicQuery)
                     .catch((error) => {
                         this.store.isResultValid = false;
+                        this.store.cards = [];
                     })
                     .then((res) => {
                         if (this.store.isResultValid) {
                             this.store.cards = res.data.data;
-                            this.store.isLoading = false;
                         }
+                        this.store.isLoading = false;
                     });
             }
             else {
                 axios.get(this.store.basicQuery + "?fname=" + this.inputSearch)
                     .catch((error) => {
                         this.store.isResultValid = false;
+                        this.store.cards = [];
                     })
                     .then((res) => {
                         if (this.store.isResultValid) {
                             this.store.cards = res.data.data;
                         }
+                        this.store.isLoading = false;
                     });
             }
         },
